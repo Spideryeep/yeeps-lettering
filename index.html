@@ -286,9 +286,10 @@ async function render(){
     for(let q=3;q<bp.length;q+=4){const a=(bp[q]-118)*14;bp[q]=a<0?0:a>255?255:a}
     for(let q=0;q<bp.length;q+=4){bp[q]=navy[0];bp[q+1]=navy[1];bp[q+2]=navy[2]}
     bx.putImageData(bd,0,0);
-    cx.drawImage(BL,0,0);cx.drawImage(mainL.E,mainX,mainY);
+    cx.drawImage(BL,0,0);
+    cx.drawImage(pl,tl.x-161*k,tl.y-239*k,pl.width*k,pl.height*k);   // left pin goes behind the letter
+    cx.drawImage(mainL.E,mainX,mainY);
     cx.drawImage(mainL.F,mainX,mainY);
-    cx.drawImage(pl,tl.x-161*k,tl.y-239*k,pl.width*k,pl.height*k);
     cx.drawImage(pr,tr.x-13*k,tr.y-286*k,pr.width*k,pr.height*k);
   }
   // crop to content
@@ -333,6 +334,5 @@ render().catch(e=>{$("msg").textContent="Could not draw: "+e.message});
 </script>
 </body>
 </html>
-
 
 
