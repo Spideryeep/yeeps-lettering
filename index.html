@@ -92,6 +92,7 @@ button.ghost:hover{border-color:var(--lav)}
     <fieldset>
       <legend>Pins</legend>
       <label class="check"><input type="checkbox" id="pins" checked>Show pins</label>
+      <label for="pinsize"><span class="row">Pin size</span><input type="range" id="pinsize" min="40" max="110" value="85"></label>
       <label for="pinL">Left pin sits on top of<select id="pinL"></select></label>
       <label for="pinR">Right pin sits on top of<select id="pinR"></select></label>
     </fieldset>
@@ -256,7 +257,7 @@ async function render(){
   let mainX=0,mainY=0;
   act.forEach((l,i)=>{const x=Math.round((CW-l.W)/2);if(!(l===mainL&&$("pins").checked))cx.drawImage(l.L,x,ys[i]);if(l===mainL){mainX=x;mainY=ys[i]}});
   if(mainL&&$("pins").checked){
-    const k=K,pl=pinSprite("L",navy),pr=pinSprite("R",navy);
+    const k=K*(+$("pinsize").value/100),pl=pinSprite("L",navy),pr=pinSprite("R",navy);
     const cxm=mainX+mainL.pad+mainL.tw/2;
     const fd=mainL.F.getContext("2d").getImageData(0,0,mainL.W,mainL.H).data, FW=mainL.W;
     const solid=(x,y)=>x>=0&&x<FW&&y>=0&&y<mainL.H&&fd[(y*FW+x)*4+3]>200;
