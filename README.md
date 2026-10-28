@@ -1,5 +1,6 @@
 Yeeps Lettering
-Yeeps Lettering is a lightweight browser-based lettering generator that creates bold, chunky, sticker-style text with a navy outline, lavender 3D depth, and decorative pins. It is designed for quick, playful logo and wordmark creation with instant visual feedback.
+Yeeps Lettering is a lightweight browser-based lettering generator that creates bold, chunky, sticker-style text with a navy outline, lavender 3D depth, and decorative pins. It is designed for quick, playful logo and wordmark creation with instant visual feedback. The person who made this is spideryeep.
+
 
 This project is intentionally simple: it is a single HTML file with embedded CSS and JavaScript, so there is no install step, build process, or dependency management required.
 
